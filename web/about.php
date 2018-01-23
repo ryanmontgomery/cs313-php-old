@@ -1,6 +1,6 @@
 <?php 
     $ptitle="CS 313 - About Me";
-    include "/shared/_header.php";
+    include ($_SERVER['DOCUMENT_ROOT']."/shared/_header.php");
 ?>
 
 <main>
@@ -23,4 +23,4 @@
     </div>
 </main>
 
-<?php include "/shared/_footer.php"; ?>
+<?php include ($_SERVER['DOCUMENT_ROOT']."/shared/_footer.php"); ?>
