@@ -11,10 +11,6 @@ h1, h2, h3, h5, h6 {
     font-family: 'Roboto', sans-serif;
 }
 
-p {
-    color: white;
-}
-
 .top-nav {
     background-color: white;
     overflow: hidden;
@@ -150,6 +146,14 @@ footer p {
     color: #FF652F;
 }
 
+.assignments-color {
+    color: #14A76C;
+}
+
 .picture-caption {
     font-size: 2.5em;
+}
+
+main {
+    color: white;
 }

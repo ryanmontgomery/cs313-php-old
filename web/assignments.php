@@ -5,7 +5,8 @@
 
 <main>
     <h2 id="assignment" class="page-header">Assignments</h2>
-    <p>Coming Soon...</p>
+    <h3>Week 3</h3>
+    <a href="team/Week3/index.php">Teach - Team Activity</a>
 </main>
 
 <?php include($_SERVER['DOCUMENT_ROOT'].'/shared/_footer.php'); ?>
