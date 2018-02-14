@@ -17,8 +17,8 @@
         </div>
         
         <div class="top-nav" id="con-top-nav">
-        <a id="nav-home" href="/index.php">Home</a>
-        <a id="nav-assignments" href="/assignments.php">Assignments</a>
-        <a id="nav-about" href="/about.php">About</a>
+        <a id="nav-home" href="index.php">Home</a>
+        <a id="nav-assignments" href="assignments.php">Assignments</a>
+        <a id="nav-about" href="about.php">About</a>
         <a href="javascript:void(0);" class="icon" onclick="navResponsive()">&#9776;</a>
     </div>

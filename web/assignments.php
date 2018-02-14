@@ -1,6 +1,6 @@
 <?php 
     $ptitle='CS 313 - Assignments';
-    include($_SERVER['DOCUMENT_ROOT'].'/shared/_header.php');
+    include('shared/_header.php');
 ?>
 
 <main>
@@ -10,4 +10,4 @@
     <a href="assignments/week3/index.php">Prove - Simply Shopping Cart</a>
 </main>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/shared/_footer.php'); ?>
+<?php include('shared/_footer.php'); ?>
