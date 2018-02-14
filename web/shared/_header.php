@@ -5,10 +5,10 @@
         <title><?php echo($ptitle); ?></title>
         <meta name="description" content="This is a web page to show my work for my CS 313 class at BYU-I">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="/js/script.js"></script>
+        <script src="js/script.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     
     <body>

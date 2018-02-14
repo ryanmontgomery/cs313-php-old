@@ -1,7 +1,14 @@
 <?php
     ini_set('display_errors',1); error_reporting(E_ALL);
     $ptitle='CS 313 - Home';
-    include('/shared/_header.php');
+
+    //local setting
+    //$prepath = $_SERVER['DOCUMENT_ROOT'];
+
+    //Remote host setting
+    //$prepath = '';
+
+    include('shared/_header.php');
 ?>
 
 <main>
@@ -167,4 +174,4 @@
     </div>
 </main>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/shared/_footer.php'); ?>
+<?php include('shared/_footer.php'); ?>
