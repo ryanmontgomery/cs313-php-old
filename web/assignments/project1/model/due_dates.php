@@ -1,5 +1,4 @@
 <?php
-
 function get_overdue_books() {
     global $db;
     $query = 'SELECT * FROM library.due_date
@@ -10,5 +9,4 @@ function get_overdue_books() {
     $statement->closeCursor();
     return $overdue_books;
 }
-
 ?>

@@ -18,10 +18,10 @@ function get_authors_books($author_id) {
               WHERE author_id = :author_id
               ORDER BY published_date DESC';
     $statement = $db->prepare($query);
-    $statment->bindValue(':author_id', $author_id);
+    $statement->bindValue(':author_id', $author_id);
     $statement->execute();
-    $authors_books = $statment->fetchAll();
-    $statment->closeCursor();
+    $authors_books = $statement->fetchAll();
+    $statement->closeCursor();
     return $authors_books;
 }
 
