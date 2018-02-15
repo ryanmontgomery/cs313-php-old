@@ -1,5 +1,4 @@
-DROP TABLE scripture.scriptures;
-DROP SCHEMA scripture;
+DROP SCHEMA scripture CASCADE;
 
 CREATE SCHEMA scripture;
 
@@ -10,6 +9,19 @@ CREATE TABLE scripture.scriptures
  verse INT NOT NULL,
  content TEXT NOT NULL
 );
+
+CREATE TABLE scripture.topic
+(topic_id SERIAL PRIMARY KEY,
+ name TEXT NOT NULL
+);
+
+CREATE TABLE scripture.topic_scripture
+(topic_id INT NOT NULL REFERENCES scripture.topic(topic_id),
+ scripture_id INT NOT NULL REFERENCES scripture.scriptures(scripture_id),
+ PRIMARY KEY (topic_id, scripture_id)
+);
+
+INSERT INTO scripture.topic (name) VALUES ('Faith'), ('Hope'), ('Charity');
 
 INSERT INTO scripture.scriptures (book, chapter, verse, content) VALUES ('John', 1, 5, 'And the light shineth in darkness; and the darkness comprehended it not.');
 
