@@ -27,16 +27,18 @@ CREATE TABLE library.author
 
 CREATE TABLE library.book
 (book_id SERIAL PRIMARY KEY,
- author_id INT NOT NULL REFERENCES library.author(author_id),
- name VARCHAR(100) NOT NULL,
+ author_id INT NOT NULL REFERENCES library.author(author_id) ON DELETE CASCADE,
+ title VARCHAR(100) NOT NULL,
  published_date DATE NOT NULL
 );
 
 CREATE TABLE library.due_date
 (due_date_id SERIAL PRIMARY KEY,
- patron_id INT NOT NULL REFERENCES library.patron(patron_id),
- book_id INT NOT NULL REFERENCES library.book(book_id),
- return_by_date DATE NOT NULL
+ patron_id INT NOT NULL REFERENCES library.patron(patron_id) ON DELETE CASCADE,
+ book_id INT NOT NULL REFERENCES library.book(book_id) ON DELETE CASCADE,
+ return_by_date DATE NOT NULL,
+ is_checked_out BOOL NOT NULL,
+ checked_in_date DATE
 );
 
 INSERT INTO library.patron (first_name, last_name, address1, city, state, zip_code, phone)
@@ -64,8 +66,9 @@ VALUES
  '2010-08-01'
 );
 
-INSERT INTO library.due_date (patron_id, book_id, return_by_date)
+INSERT INTO library.due_date (patron_id, book_id, return_by_date, is_checked_out)
 SELECT 
  1,
  1,
- CURRENT_DATE + INTERVAL '14 day';
+ CURRENT_DATE + INTERVAL '14 day',
+ TRUE;
