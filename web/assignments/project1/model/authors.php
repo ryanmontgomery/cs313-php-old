@@ -7,7 +7,7 @@ function get_author($author_id) {
     $statement = $db->prepare($query);
     $statement->bindValue(':author_id', $author_id);
     $statement->execute();
-    $patron = $statement->fetch();
+    $author = $statement->fetch();
     $statement->closeCursor();
     return $author;
 }
@@ -50,15 +50,18 @@ function add_author($first_name, $last_name, $bio) {
 }
 
 function update_author($author_id, $first_name, $last_name, $bio) {
+    var_dump($first_name);
+    var_dump($last_name);
+    var_dump($bio);
     global $db;
     $query = 'UPDATE library.author
               SET 
-              (first_name = :first_name,
+               first_name = :first_name,
                last_name = :last_name,
-               bio = :bio)
+               bio = :bio
               WHERE author_id = :author_id';
     $statement = $db->prepare($query);
-    $statement->bindValue(":author_id", $patron_id);
+    $statement->bindValue(":author_id", $author_id);
     $statement->bindValue(":first_name", $first_name);
     $statement->bindValue(":last_name", $last_name);
     $statement->bindValue(":bio", $bio);

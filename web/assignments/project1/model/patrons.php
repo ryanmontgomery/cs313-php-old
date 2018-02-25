@@ -51,17 +51,18 @@ function add_patron($first_name, $last_name, $address1, $address2, $city, $state
     $statement->closeCursor();
 }
 
-function update_patron($patron_id, $first_name, $last_name, $address1, $address2, $city, $state, $zip_code) {
+function update_patron($patron_id, $first_name, $last_name, $address1, $address2, $city, $state, $zip_code, $phone) {
     global $db;
     $query = 'UPDATE library.patron
               SET 
-              (first_name = :first_name,
+               first_name = :first_name,
                last_name = :last_name,
                address1 = :address1,
                address2 = :address2,
                city = :city,
                state = :state,
-               zip_code = :zip_code)
+               zip_code = :zip_code,
+               phone = :phone
               WHERE patron_id = :patron_id';
     $statement = $db->prepare($query);
     $statement->bindValue(":patron_id", $patron_id);
@@ -72,6 +73,7 @@ function update_patron($patron_id, $first_name, $last_name, $address1, $address2
     $statement->bindValue(":city", $city);
     $statement->bindValue(":state", $state);
     $statement->bindValue(":zip_code", $zip_code);
+    $statement->bindValue(":phone", $phone);
     $statement->execute();
     $statement->closeCursor();
 }

@@ -54,9 +54,9 @@ function update_book($book_id, $author_id, $title, $published_date) {
     global $db;
     $query = 'UPDATE library.book
               SET 
-              (author_id = :author_id,
+               author_id = :author_id,
                title = :title,
-               published_date = :published_date)
+               published_date = :published_date
               WHERE book_id = :book_id';
     $statement = $db->prepare($query);
     $statement->bindValue(":book_id", $book_id);

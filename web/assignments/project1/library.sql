@@ -52,6 +52,17 @@ VALUES
  '4359998888'
 );
 
+INSERT INTO library.patron (first_name, last_name, address1, city, state, zip_code, phone)
+VALUES
+('Kelsey',
+ 'Montgomery',
+ '1016 N 700 E',
+ 'Logan',
+ 'Utah',
+ '84321',
+ '4358889999'
+);
+
 INSERT INTO library.author (first_name, last_name, bio)
 VALUES
 ('Brandon',
@@ -59,7 +70,7 @@ VALUES
  'In December 2007 Brandon was chosen by Harriet McDougal Rigney to complete Robert Jordan''s Wheel of Time series after his untimely passing. 2009''s The Gathering Storm and 2010''s Towers of Midnight was followed by the final volume in the series, A Memory of Light, in January 2013.'
 );
 
-INSERT INTO library.book (author_id, name, published_date)
+INSERT INTO library.book (author_id, title, published_date)
 VALUES
 (1,
  'The Way of Kings',
@@ -70,5 +81,5 @@ INSERT INTO library.due_date (patron_id, book_id, return_by_date, is_checked_out
 SELECT 
  1,
  1,
- CURRENT_DATE + INTERVAL '14 day',
+ CURRENT_DATE - INTERVAL '14 day',
  TRUE;
